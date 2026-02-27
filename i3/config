@@ -277,8 +277,11 @@ exec_always --no-startup-id /home/$USER/.dotfiles/polybar/launch.sh
 ###############################
 
 # --- ASSIGN WORSPACES ---
+# Command : xprop | grep WM_CLASS | awk '{ print $4 }'
 assign [class="Firefox"] 1
-assign [class="Spotify"] 4
+assign [class="Spotify"] 6
+assign [class="thunderbird-default"] 8
+assign [class="discord"] 7
 
 # --- ROFI ---
 bindsym $mod+d exec "rofi -show drun"
