@@ -2,6 +2,11 @@
 if [ -f $HOME/.config/fish/aliases.fish ]
     source $HOME/.config/fish/aliases.fish
 end
+if [ -f $HOME/.config/fish/private-aliases.fish ]
+    source $HOME/.config/fish/private-aliases.fish
+    # Contains:
+    #  - gocryptfs
+end
 
 # Add bin directories to the path
 fish_add_path -a /usr/local/go/bin
@@ -26,3 +31,5 @@ set -U pure_color_mute "magenta"
 # This section can be safely removed at any time if needed.
 test -r '/home/thomas/.opam/opam-init/init.fish' && source '/home/thomas/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/thomas/.ghcup/bin # ghcup-env
